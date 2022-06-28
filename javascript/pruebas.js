@@ -30,4 +30,4 @@ function SS(peso, elementos){
 
 console.log(SS(0, lista));
 
-
+var tumama;
