@@ -1,8 +1,8 @@
 var espacio = 50;
-var lista = [30,10,45,25];
+var lista = [30,10,45,25,19];
 const limite = 50;
 const INF = 1e9;
-
+console.time();
 function SS(peso, elementos){
 
     console.log("--------------------------");
@@ -46,4 +46,4 @@ function SS(peso, elementos){
 }
 
 console.log(SS(0, lista));
-
+console.timeEnd();
