@@ -5,22 +5,39 @@ const INF = 1e9;
 
 function SS(peso, elementos){
 
-    if(limite - peso < 0)
-        return -INF;
+    console.log("--------------------------");
+    console.log("Peso: " + peso);
+    console.log("Elementos: " + elementos);
 
-    let max = peso;
+    if(limite - peso < 0){
+        console.log("El peso se excedió");
+        return -INF;
+    }
+
+    if(elementos.length == 0){
+        return peso;
+    }
+
+    let max = 0;
+
     elementos.forEach(e => {
-        let nuevoElementos = elementos;
+        let nuevoElementos = [...elementos];
         let nuevoPeso = peso + e;
         nuevoElementos.splice(nuevoElementos.indexOf(e), 1);
-        console.log(nuevoElementos);
         
-        let sol = SS(nuevoPeso, nuevoElementos);
+        console.log(e + " en la mochila");
+        const sol1 = SS(nuevoPeso, nuevoElementos);
+        console.log(e + " NO en la mochila");
+        const sol2 = SS(peso, nuevoElementos);
+
+        console.log("Comparing " + sol1 + ", " + sol2);
+
+        let sol = Math.max(sol1, sol2);
         
         if(sol > max){
-            console.log("Old max: " + max);
+            //console.log("Old max: " + max);
             max = sol;
-            console.log("New max: " + max);
+            //console.log("New max: " + max);
 
         }
     });
@@ -30,4 +47,3 @@ function SS(peso, elementos){
 
 console.log(SS(0, lista));
 
-var tumama;
