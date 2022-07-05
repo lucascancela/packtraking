@@ -7,17 +7,21 @@ var lista = [
     [0, 5, 0, 0, 9, 0, 6, 0, 0], 
     [1, 3, 0, 0, 0, 0, 2, 5, 0], 
     [0, 0, 0, 0, 0, 0, 0, 7, 4], 
-    [0, 0, 5, 2, 0, 6, 3, 0, 0] ]
+    [0, 0, 5, 2, 0, 6, 3, 0, 0] 
+]
 
-res(sudoku){
+console.log("hola");
+
+function res (sudoku) {
     let nuevoSudoku = [...sudoku];
-
-    nuevoSudoku.forEach(e => {
-        if()  //e esta en la misma lista o el mismo inde of que e
+    nuevoSudoku.forEach(fila =>{
+        fila.forEach(e => {
+            for (let i = 0; i < fila.length; i++) {
+                hola = fila.indexOf(e);
+                console.log("el numero " + e + " esta en " + hola);
+            }
+        });
     });
-
-
-
 }
 
 res(lista);
