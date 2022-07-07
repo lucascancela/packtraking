@@ -10,18 +10,20 @@ var lista = [
     [0, 0, 5, 2, 0, 6, 3, 0, 0] 
 ]
 
-console.log("hola");
 
 function res (sudoku) {
     let nuevoSudoku = [...sudoku];
     nuevoSudoku.forEach(fila =>{
         fila.forEach(e => {
-            for (let i = 0; i < fila.length; i++) {
-                hola = fila.indexOf(e);
-                console.log("el numero " + e + " esta en " + hola);
-            }
+        
+          if(fila[e] == 0){
+              fila[e]==1;
+              
+          }
+          
         });
     });
+nuevoSudoku
 }
 
 res(lista);
