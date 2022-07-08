@@ -13,17 +13,18 @@ var lista = [
 
 function res (sudoku) {
     let nuevoSudoku = [...sudoku];
-    nuevoSudoku.forEach(fila =>{
+    nuevoSudoku.forEach(fila => {
+        let i = 0;
         fila.forEach(e => {
-        
-          if(fila[e] == 0){
-              fila[e]==1;
-              
-          }
-          
+            if(e==0){
+                i++;
+                a=fila.indexOf(e);
+                fila[a]=i;
+            }
         });
-    });
-nuevoSudoku
+        fila
+    });        
+       
 }
 
 res(lista);
