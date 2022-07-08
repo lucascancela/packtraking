@@ -18,13 +18,24 @@ function res (sudoku) {
         fila.forEach(e => {
             if(e==0){
                 i++;
-                a=fila.indexOf(e);
+                a=fila.indexOf(e);  
                 fila[a]=i;
             }
         });
         fila
-    });        
-       
+    });
 }
-
 res(lista);
+
+function solucion(sudoku){
+    sudoku.forEach(fila => {
+        let i = 0;
+        fila.forEach(e => {
+            if () {
+                    console.log("no");
+                }else{
+                    console.log("si");
+                }
+        });            
+    });
+}
