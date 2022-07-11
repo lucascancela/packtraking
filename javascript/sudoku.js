@@ -20,22 +20,41 @@ function res (sudoku) {
                 i++;
                 a=fila.indexOf(e);  
                 fila[a]=i;
+
             }
         });
-        fila
+        
+        fila_sin_cero(fila);
+        fila_repetidos(fila);
     });
 }
 res(lista);
 
-function solucion(sudoku){
-    sudoku.forEach(fila => {
-        let i = 0;
-        fila.forEach(e => {
-            if () {
-                    console.log("no");
-                }else{
-                    console.log("si");
-                }
-        });            
-    });
+function fila_sin_cero(fila){
+    if (fila.includes(0)) return true
+    else return false
 }
+
+function fila_repetidos(fila){
+    const lista = [...fila].sort();
+    for (let i = 0; i < lista.length; i++) {
+        if (lista[i + 1] === lista[i]) {
+            return false; // no es solucion porq hay repetida        
+        }
+    }
+}
+
+// function solucion(sudoku){
+//     sudoku.forEach(fila => {
+//         let i = 0;
+//         fila.forEach(e => {
+//             if(fila[e] == 0){
+//                 console.log("lugar vacio ");
+//                 return false;
+
+//                 }else{
+//                     return true;
+//                 }
+//         });            
+//     });
+// }
