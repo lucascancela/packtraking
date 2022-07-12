@@ -13,37 +13,58 @@ var lista = [
 
 function res (sudoku) {
     let nuevoSudoku = [...sudoku];
-    nuevoSudoku.forEach(fila => {
-        let i = 0;
-        fila.forEach(e => {
-            if(e==0){
-                i++;
-                a=fila.indexOf(e);  
-                fila[a]=i;
 
-            }
-        });
+    nuevoSudoku.forEach(fila => {
+        // let i = 0;
+        // fila.forEach(e => {
+        //     if(e==0){
+        //         i++;
+        //         a=fila.indexOf(e);  
+        //         fila[a]=i;
+
+        //     }
+        // });
+
         
         fila_sin_cero(fila);
-        fila_repetidos(fila);
+        repetidos(fila);
     });
+    console.log(columnas(nuevoSudoku)[0]);
+    console.log(repetidos(columnas(nuevoSudoku)[0]));
 }
 res(lista);
 
 function fila_sin_cero(fila){
-    if (fila.includes(0)) return true
-    else return false
+    if (fila.includes(0)) {
+        return true
+    }else {
+        return false
+    }
 }
 
-function fila_repetidos(fila){
+function repetidos(fila){
     const lista = [...fila].sort();
     for (let i = 0; i < lista.length; i++) {
         if (lista[i + 1] === lista[i]) {
             return false; // no es solucion porq hay repetida        
+        }else{
+            return true;
         }
     }
 }
 
+function columnas(sudoku){
+    lista_columnas = [];
+    for (let i = 0; i < sudoku.length; i++) {
+        columna = [];
+        for (let x = 0; x < sudoku.length; x++) {
+            columna.push(sudoku[x][i]);   
+            
+        }
+        lista_columnas.push(columna);
+        return lista_columnas;
+    }
+}
 // function solucion(sudoku){
 //     sudoku.forEach(fila => {
 //         let i = 0;
