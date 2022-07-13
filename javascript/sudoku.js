@@ -29,12 +29,12 @@ function res (sudoku) {
         fila_sin_cero(fila);
         repetidos(fila);
     });
-
-    cuadrantes(nuevoSudoku);
+    
+    console.log(cuadrantes(nuevoSudoku));
 
     columna = columnas(nuevoSudoku);
     columna.forEach(e => {
-        repetidos(e);
+        console.log(repetidos(e));
     });
 
 }
