@@ -30,11 +30,11 @@ function res (sudoku) {
         repetidos(fila);
     });
     
-    console.log(cuadrantes(nuevoSudoku));
+    cuadrantes(nuevoSudoku);
 
     columna = columnas(nuevoSudoku);
     columna.forEach(e => {
-        console.log(repetidos(e));
+        repetidos(e);
     });
 
 }
@@ -72,10 +72,19 @@ function columnas(sudoku){
 }
 
 function cuadrantes(sudoku){
-    for (let i = 0; i < sudoku.length; i++) {
-        
+    for (let j = 0; j < 3; j++) {
+        for (let k = 0; k < 3; k++) {
+            for (let j = 0; j < 3; j++) {
+                for (let x=0; x < 3; x++) {
+                    
+                }
+                
+            }
+        }
     }
 }
+
+
 
 // function solucion(sudoku){
 //     sudoku.forEach(fila => {
