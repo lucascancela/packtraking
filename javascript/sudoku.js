@@ -29,16 +29,22 @@ function res (sudoku) {
         fila_sin_cero(fila);
         repetidos(fila);
     });
-    console.log(columnas(nuevoSudoku)[0]);
-    console.log(repetidos(columnas(nuevoSudoku)[0]));
+
+    cuadrantes(nuevoSudoku);
+
+    columna = columnas(nuevoSudoku);
+    columna.forEach(e => {
+        repetidos(e);
+    });
+
 }
 res(lista);
 
 function fila_sin_cero(fila){
     if (fila.includes(0)) {
-        return true
+        return false;  //hay un 0
     }else {
-        return false
+        return true;
     }
 }
 
@@ -58,13 +64,19 @@ function columnas(sudoku){
     for (let i = 0; i < sudoku.length; i++) {
         columna = [];
         for (let x = 0; x < sudoku.length; x++) {
-            columna.push(sudoku[x][i]);   
-            
+            columna.push(sudoku[x][i])
         }
         lista_columnas.push(columna);
-        return lista_columnas;
+    }
+    return lista_columnas;
+}
+
+function cuadrantes(sudoku){
+    for (let i = 0; i < sudoku.length; i++) {
+        
     }
 }
+
 // function solucion(sudoku){
 //     sudoku.forEach(fila => {
 //         let i = 0;
