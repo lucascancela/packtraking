@@ -32,7 +32,9 @@ function res (sudoku) {
     
     cuadrantes(nuevoSudoku);
 
+    
     columna = columnas(nuevoSudoku);
+    console.log(columna);
     columna.forEach(e => {
         repetidos(e);
     });
