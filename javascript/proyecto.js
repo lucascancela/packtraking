@@ -9,21 +9,22 @@ var bloques = [
 
 var materia = ["lengua", "matematica", "fisica"];
 var cursos = ["a"];
-
+console.log("HOl");
 function a(horarios){
     let nuevoHorarios = [...horarios];
     nuevoHorarios
+    var A = 0;
     horarios.forEach(e => {
         e.forEach(x => {
-            for (let i = 0; i < e.length; i++) {
                 //hacer q se meta la materia en nuevohorarios e ir probadno con todas hasta q no se puieda y hacer backtracking
-            }
+
         });
     });
+    console.log(A);
 
 }
 
-
+a(bloques);
 
 // console.log(orden_bloques(bloques));
 function orden_bloques(bloques){
