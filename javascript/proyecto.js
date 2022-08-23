@@ -1,51 +1,52 @@
 var bloques = [ 
-    [1,2,3,4,5,0],
-    [1,2,3,4,5,6],
-    [1,2,3,4,5,0],
-    [1,2,3,4,5,6],
-    [1,2,3,0,0,0],
-
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0],
 ]
 
-var materia = ["lengua", "matematica", "fisica"];
+var materia = ["lengua", "lengua", "matematica", "matematica", "fisica", "fisica"];
 var cursos = ["a"];
-var condicion = false;
+var condicion = true; //desp poner q empieze en false
 
-function a(horarios){
+function a(horarios, materias, cursos){
     let nuevoHorarios = [...horarios];
-    
-    if(condicion==false){    
+    let nuevoMaterias = [...materias];
+    if(condicion==true){    
         var i = 0;
-        condicion=false;
+   //     condicion=false;
 
         nuevoHorarios.forEach(e => {
-            e.forEach(x => {
-                //hacer q se meta la materia en nuevohorarios e ir probadno con todas hasta q no se puieda y hacer backtracking
-                
-            });
-
-            if(repetidos(e)==false){
-                //aca hacer llamado recursivo
-            } else{
-                i+=1;
-                i
+            for (let i = 0; i < 6; i++) {
+                //hacer llamado recursivo recursivo??  
+                //agregarle a nuevohorarios las materias de nuevamaterias con el llamado recursivo (seguro tenga q pedir ayuda xde)         
             }
-            
+
+        //     if(repetidos(e)==false
+        //     ){ {
+        //         //aca hacer llamado recursivo
+        //     }
+        // } else{
+        //     i+=1;
+        // }
+        
         });
+    
         
         if(i==5){
             condicion=true;
         }
     } 
     
-    if(condicion==true){
-        return nuevoHorarios;
+    // if(condicion==true){
+    //     return nuevoHorarios;
         
-    }else{
-        return("no solucion posible");
-    }
+    // }else{
+    //     return("no solucion posible");
+    // }
 }
-console.log(a(bloques));
+console.log(a(bloques, materia, cursos));
 
 
 console.log(orden_bloques(bloques));
