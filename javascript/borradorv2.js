@@ -5,6 +5,7 @@ var bloques = [
     [0,0,0,0,0,0],
     [0,0,0,0,0,0],
 ]
+    
 //dia = fila 
 function solve(horarios){
     let nuevoHorarios = [...horarios];
