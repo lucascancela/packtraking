@@ -13,31 +13,33 @@ var condicion = true; //desp poner q empieze en false
 function a(horarios, materias, cursos){
     let nuevoHorarios = [...horarios];
     let nuevoMaterias = [...materias];
-    if(condicion==true){    
-        var i = 0;
-   //     condicion=false;
 
-        nuevoHorarios.forEach(e => {
-            for (let i = 0; i < 6; i++) {
-                //hacer llamado recursivo recursivo??  
-                //agregarle a nuevohorarios las materias de nuevamaterias con el llamado recursivo (seguro tenga q pedir ayuda xde)         
+    // if(condicion==true){    
+    //     var i = 0;
+    // //     condicion=false;
+    // }
+    
+    nuevoHorarios.forEach(e =>{
+        for (let i = 0; i < e.length; i++) {
+            if(e[i]==0){
+                e.pop(i)
             }
-
-        //     if(repetidos(e)==false
-        //     ){ {
-        //         //aca hacer llamado recursivo
-        //     }
-        // } else{
-        //     i+=1;
-        // }
-        
-        });
+            
+        }       
+        a(nuevoHorarios,nuevoMaterias,cursos);
     
         
-        if(i==5){
-            condicion=true;
-        }
-    } 
+    // if(repetidos(e)==false){
+    //     //aca hacer llamado recursivo
+    // }else{
+    //     i+=1;
+    // }
+    // if(i==5){
+    //     condicion=true;
+    // }
+
+    });
+    nuevoHorarios
     
     // if(condicion==true){
     //     return nuevoHorarios;
@@ -46,6 +48,7 @@ function a(horarios, materias, cursos){
     //     return("no solucion posible");
     // }
 }
+
 console.log(a(bloques, materia, cursos));
 
 
@@ -69,10 +72,21 @@ function orden_bloques(bloques){
     return lista_bloques;
 }
 
-function repetidos(fila){
+// function repetidos(fila){
+//     const lista = [...fila].sort();
+//     for (let i = 0; i < lista.length; i++) {
+//         if (lista[i + 1] === lista[i]) {
+//             return false; // no es solucion porq hay repetida        
+//         }else{
+//             return true;
+//         }
+//     }
+// }
+
+function repetidos(fila, cantReps){
     const lista = [...fila].sort();
     for (let i = 0; i < lista.length; i++) {
-        if (lista[i + 1] === lista[i]) {
+        if (lista[i + cantReps] === lista[i]) {
             return false; // no es solucion porq hay repetida        
         }else{
             return true;
