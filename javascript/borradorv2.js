@@ -5,9 +5,11 @@ var bloques = [
     [0,0,0,0,0,0],
     [0,0,0,0,5,0],
 ]
-    console.log("hola")
+var valor=1;
+var materias = ["lengua"]
+console.log("hola")
 //dia = fila 
-function solve(horarios){
+function solve(horarios, valor){
   //  let nuevoHorarios2 = [...nuevoHorarios];
 
     // nuevoHorarios.forEach(dia => {
@@ -18,21 +20,19 @@ function solve(horarios){
     // bloques_invertido.forEach(columna => {
         // });
         
-   console.log(horarios[2][3]) //jugar con esto
-
-   for (let i = 0; i < 5; i++) {
-       let nuevoHorarios2
-       let valor=1
+    console.log(horarios[2][3]) //jugar con esto
+    valor
+    for (let i = 0; i < 5; i++) {
+        let newValor;
+        newValor = valor;
 
         for (let j = 0; j < 6;j++) {
             if(horarios[i][j] == 0){
-            horarios[i][j] = valor
-            valor
-            solve(horarios)
-            
-            }            
-            valor++
-
+            horarios[i][j] = newValor
+            newValor
+            solve(horarios, valor++);
+            }
+            newValor++
         }
         
         console.log(horarios)
@@ -40,7 +40,7 @@ function solve(horarios){
     }
     
 }
-solve(bloques);
+solve(bloques, 1);
 
 function invertir(bloques){
     lista_bloques = [];
