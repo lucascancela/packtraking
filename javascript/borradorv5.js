@@ -9,6 +9,10 @@ for (let i = 0; i < materias.length; i++) {
 }
 materias.splice(2,1)
 console.log(materias)
+for (let i = 0; i < 7; i++) {
+console.log("hola")   
+ 
+}
 for (let i = 0; i < materias.length;) {
     materias.splice(0,1)
     materias

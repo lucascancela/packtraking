@@ -2,9 +2,9 @@ var bloques = [0,0,0,0,0,0];
 
 var materias = ["mate", "mate", "lengua", "lengua","proy", "proy"];
 
-var profeMate =   [1,1,1,1,1,1];
-var profeLengua = [1,1,1,1,1,1]; 
-var profeProy =   [1,1,1,1,1,1];
+var profeMate =   [0,0,1,1,1,0];
+var profeLengua = [1,1,0,0,0,0]; 
+var profeProy =   [0,0,0,1,1,1];
 
 function solve(horarios, materias){
     let num=0;
@@ -15,7 +15,7 @@ function solve(horarios, materias){
             console.log(profeMate[i])
             materias
 
-            for (let j = 0; j <= materias.length; j++) {
+            for (let j = 0; j < materias.length; j++) {
                 if(materias[j]=="mate" && profeMate[i]==1 || materias[j]=="proy" && profeProy[i]==1 || materias[j]=="lengua" && profeLengua[i]==1){
                     //   solve(horarios,materias);
                     horarios[i] = materias[j];
@@ -23,6 +23,7 @@ function solve(horarios, materias){
                     break;
                 }
             }
+            bloques
             
           //  horarios[i] = materias[0];
             //   solve(horarios,materias);
