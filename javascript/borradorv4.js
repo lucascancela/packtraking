@@ -8,17 +8,27 @@ var profeProy =   [0,0,0,1,1,1];
 
 function solve(horarios, materias){
     let num=0;
-    for (let i = 0; materias.length > 0; i++) { //REVISAR EL I++ VER BORRADORV5 COMO HICE
+    for (let i = 0; materias.length > 0; i++) { 
         if(horarios[i]==0){
             for (let j = 0; j < materias.length; j++) {
                 if(materias[j]=="mate" && profeMate[i]==1 || materias[j]=="proy" && profeProy[i]==1 || materias[j]=="lengua" && profeLengua[i]==1){
-                    //   solve(horarios,materias);
                     horarios[i] = materias[j];
-                    materias.splice(j,1);
+                    let nuevasMaterias = [...materias];
+                    nuevasMaterias.splice(j,1);
+
+                    //poner el profe q haya agarrado en su horario = 0
+                    
+                    // Si horarios y materias ya estan cumplidos los dos, reutrn true
+                    // ...
+
+                    if(solve(horarios,nuevasMaterias)){
+                        return true;
+                    }
+                    //poner el profe q haya agarrado en su horario = 1
+                    
                     break;
                 }
             }
-            bloques
             //   solve(horarios,materias);
         }
     }
