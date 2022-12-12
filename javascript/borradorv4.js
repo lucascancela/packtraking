@@ -8,6 +8,8 @@ var profeProy =   [0,0,0,1,1,1];
 
 const INF = 1e9;
 
+var horarioFinal = [];
+
 function solve(horarios, materias){
     let num=0;
     for (let i = 0; materias.length > 0; i++) { 
@@ -25,27 +27,33 @@ function solve(horarios, materias){
                     }else if(materias[j]=="lengua"){
                         profeLengua[i]==0;
                     }
-                    //poner el profe q haya agarrado en su horario = 0
+                     
+                    // if(horarios[j]!=0 && materias.length==0){
+                    //     return true;
+                    // }
                     
-                    if(horarios[j]!=0 && materias.length==0){
-                        return true;
-                    }
                     for (let k = 0; k < horarios.length; k++) {
                         if(horarios[k]==0){
                             horarios==INF;
                         }
                     }
                     if(nuevasMaterias.length==0 && horarios!=INF){
+                        if(horarioFinal.length==0){
+                            horarioFinal = horarios
+                        }
                         return true;
                     }
-
-                    // Si horarios y materias ya estan cumplidos los dos, reutrn true
-                    // ...
+                    
 
                     if(solve(horarios,nuevasMaterias)){
+                        if(horarioFinal.length==0){
+                            horarioFinal = horarios
+                        }
                         return true;
                     }
-
+                    
+                    solve(horarios,nuevasMaterias);
+                    
                     if(materias[j]=="mate"){
                         profeMate[i]==1;
                     }else if(materias[j]=="proy"){
@@ -53,7 +61,6 @@ function solve(horarios, materias){
                     }else if(materias[j]=="lengua"){
                         profeLengua[i]==1;
                     }
-                    //poner el profe q haya agarrado en su horario = 1
 
                     break;
                 }
@@ -62,4 +69,6 @@ function solve(horarios, materias){
     }
 }
 
-solve(bloques, materias);
+console.log(solve(bloques, materias));
+console.log(horarioFinal)
+
