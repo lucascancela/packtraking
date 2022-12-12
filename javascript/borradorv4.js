@@ -6,8 +6,7 @@ var bloques = [
     [0,0,0,0,0,0],
     ];
 
-var materias = ["mate", "mate", "lengua", "lengua","proy", "proy", "mate", "mate", "lengua", "lengua","proy", "proy", "mate", "mate", "lengua", "lengua","proy", "proy", "mate", "mate", "lengua", "lengua","proy", "proy", "mate", "mate", "lengua", "lengua","proy", "proy"];
-
+var materias = ["mate", "mate", "lengua", "lengua","proy", "proy", "quimica", "quimica", ]
 var profeLengua = [
     [0,0,0,0,0,0], 
     [0,0,0,0,0,0], 
@@ -32,7 +31,7 @@ var profeProy = [
     [0,0,0,0,0,0],
     ];
 
-var profe = [
+var profeQuimica = [
     [0,0,0,0,0,0],
     [0,0,0,0,0,0],
     [0,0,0,0,0,0], 
@@ -88,6 +87,54 @@ var profe = [
     [0,0,0,0,0,0],
     ];
 
+
+var profe = [
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0], 
+    [0,0,0,0,0,0], 
+    [0,0,0,0,0,0],
+    ];
+    
+
+var profe = [
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0], 
+    [0,0,0,0,0,0], 
+    [0,0,0,0,0,0],
+    ];
+    
+
+var profe = [
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0], 
+    [0,0,0,0,0,0], 
+    [0,0,0,0,0,0],
+    ];
+
+
+var profe = [
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0], 
+    [0,0,0,0,0,0], 
+    [0,0,0,0,0,0],
+    ];
+
+
+var profe = [
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0],
+    [0,0,0,0,0,0], 
+    [0,0,0,0,0,0], 
+    [0,0,0,0,0,0],
+    ];
+    
+    
+    
+
 const INF = 1e9;
 var horarioFinal = [];
 
@@ -97,7 +144,8 @@ function solve(horarios, materias){
 
             if(horarios[h][i]==0){
                 for (let j = 0; j < materias.length; j++) {
-                    if(materias[j]=="mate" && profeMate[h][i]==1 || materias[j]=="proy" && profeProy[h][i]==1 || materias[j]=="lengua" && profeLengua[h][i]==1){
+                    if(materias[j]=="mate" && profeMate[h][i]==1 || materias[j]=="proy" && profeProy[h][i]==1 || materias[j]=="lengua" && profeLengua[h][i]==1 || materias[j]=="quimica" && profeQuimica[h][i]==1 ){
+                        // agregar cada profesor ahi arruiba con el || y eso
                         horarios[h][i] = materias[j];
                         let nuevasMaterias = [...materias];
                         nuevasMaterias.splice(j,1);
@@ -109,7 +157,10 @@ function solve(horarios, materias){
                         }else if(materias[j]=="lengua"){
                             profeLengua[h][i]==0;
                         }
-                        
+                        //hacer los horarios en 0 de todos los profes nuevos
+
+
+
                         // if(horarios[j]!=0 && materias.length==0){
                         //     return true;
                         // }
@@ -143,6 +194,7 @@ function solve(horarios, materias){
                         }else if(materias[j]=="lengua"){
                             profeLengua[h][i]==1;
                         }
+                        // hacer los horaris en 1 de todos los profes nuevos q agrego
 
                         break;
                     }
