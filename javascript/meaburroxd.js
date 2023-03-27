@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-var profes = ["M Briante", "Mme carminati"];
+var profes = ["profe de py", "profe de diseño"];
 
 function quienEsElMejor(profesores){
   let num = Math.random()
@@ -11,9 +10,3 @@ function quienEsElMejor(profesores){
   }
 }
 quienEsElMejor(profes);
-=======
-var hola = Math.random()*10;
-hola
-hola=Math.round(hola)
-hola
->>>>>>> 5c7acfd127da99db9e5caf287456c49ab133f9d4
